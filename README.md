@@ -8,6 +8,6 @@
 
 
     ###### _Screenshoot_
-    <img src="./sc-qtemu-tmprly.png" width="820">
+    <img src="./sc.png" width="820">
 
 
