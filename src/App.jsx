@@ -1,30 +1,25 @@
-import SectionMeet from "./components/SectionMeet"
-import SectionMember from "./components/SectionMember"
-import AboutMeet from "./components/AboutMeet"
-import SectionNextMeet from "./components/SectionNextMeet"
-import SectionPastMeet from "./components/SectionPastMeet"
-import Navbar from "./components/Navbar"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import Navbar from './components/Navbar';
+// import { Home, Explore, Login, CreateMeetup } from './pages';
+import Home from './pages/home';
+import Explore from './pages/explore';
+import Login from './pages/login';
+import CreateMeetup from './pages/create-meetup';
+
 
 
 function App() {
 
   return (
-    <>
+    <Router>
       <Navbar />
-      <SectionMeet />
-      <SectionNextMeet />
-      <AboutMeet />
-      <SectionMember />
-      <h3 className="font-extrabold text-2xl mx-12">Past Meet</h3>
-      <div className="flex flex-row">
-        <SectionPastMeet />
-        <SectionPastMeet dateTitle={"28 Maret 2023"} />
-        <SectionPastMeet dateTitle={"29 Maret 2023"} />
-      </div>
-      <footer className="py-3 flex justify-center">
-        <p>Copyright Muhis 2022</p>
-      </footer>
-    </>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/create-meetup" element={<CreateMeetup />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   )
 }
 
