@@ -1,12 +1,4 @@
 
-// import {
-//     SectionMeet,
-//     SectionMember,
-//     AboutMeet,
-//     SectionNextMeet,
-//     SectionPastMeet,
-// } from "./components"
-
 import SectionMeet from "./components/SectionMeet";
 import SectionMember from "./components/SectionMember";
 import AboutMeet from "./components/AboutMeet";

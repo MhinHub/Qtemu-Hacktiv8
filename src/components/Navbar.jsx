@@ -1,22 +1,33 @@
 // Membuat navbar JSX
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Navbar = () => {
-    
+    const [isRedirect, setRedirect] = useState()
+    const location = useLocation()
+
+    useEffect(() => {
+        setRedirect(location.pathname)
+    }, [location])
+
+    const isActive = (path) => path === isRedirect ? "active" : ""
+
     return (
         <nav className="bg-blue-600 my-10 backdrop-blur drop-shadow-lg bg-opacity-20  border-gray-200 px-2 mx-10 mt-4 sm:px-4 py-2.5 rounded-3xl dark:bg-gray-900">
             <div className="container flex flex-wrap justify-between items-center mx-auto">
                 <NavLink
                     to="/"
-                    className="flex items-center">
+                    className={"flex items-center"}>
                     <img
                         src="https://res.cloudinary.com/crunchbase-production/image/upload/fd744baa933403c55d0d"
                         className="mr-3 h-6 sm:h-9 rounded-full"
                         style={{ transform: "scaleX(-1)" }}
                         alt="qtemu"
                     />
-                    <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
+                    <span className={"active:text-blue-700 self-center text-xl font-semibold whitespace-nowrap text-white"}>
                         Qtemu
                     </span>
                 </NavLink>
@@ -59,9 +70,9 @@ const Navbar = () => {
                             <NavLink
                                 to="/create-meetup"
                                 href="#Create Meetup"
-                                className="block py-2 pr-4 pl-3 text-gray-700 rounded active:font-bold active:underline-offset-8 active:text-blue-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                className={( {isActive} ) => isActive ? "bg-blue-400 p-2 font-extrabold rounded-l text-blue-800" : "block py-2 pr-4 pl-3 text-gray-700 rounded active:font-bold active:underline-offset-8 active:text-blue-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"}
                                 aria-current="page"
-                                
+
                             >
                                 Create Meetup
                             </NavLink>
@@ -70,8 +81,8 @@ const Navbar = () => {
                             <NavLink
                                 to="/explore"
                                 href="#Explore"
-                                className="py-2 pr-4 pl-3 text-gray-700 rounded active:font-bold active:underline-offset-8 active:text-blue-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"          
-                                
+                                className={( {isActive} ) => isActive ? "bg-blue-400 p-2 font-extrabold rounded-l text-blue-800" : "py-2 pr-4 pl-3 text-gray-700 rounded active:font-bold active:underline-offset-8 active:text-blue-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"}
+
                             >
                                 Explore
                             </NavLink>

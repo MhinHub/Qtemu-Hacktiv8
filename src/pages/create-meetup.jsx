@@ -36,7 +36,7 @@ export default function CreateMeetup() {
                 <form className="mt-6" onSubmit={submitHandler}>
                     <div className="mb-2">
                         <label
-                            for="title"
+                            htmlFor="title"
                             className="block text-sm font-semibold text-gray-800"
                         >
                             Title
@@ -50,7 +50,7 @@ export default function CreateMeetup() {
                     </div>
                     <div className="mb-2">
                         <label
-                            for="image"
+                            htmlFor="image"
                             className="block text-sm font-semibold text-gray-800"
                         >
                             Image URL
@@ -64,7 +64,7 @@ export default function CreateMeetup() {
                     </div>
                     <div className="mb-2">
                         <label
-                            for="address"
+                            htmlFor="address"
                             className="block text-sm font-semibold text-gray-800"
                         >
                             Address
@@ -78,7 +78,7 @@ export default function CreateMeetup() {
                     </div>
                     <div className="mb-2">
                         <label
-                            for="description"
+                            htmlFor="description"
                             className="block text-sm font-semibold text-gray-800"
                         >
                             Description
