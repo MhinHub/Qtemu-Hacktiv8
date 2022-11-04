@@ -1,3 +1,5 @@
+![HitCount](https://hits.dwyl.com/Mhinhub/Qtemu-Hacktiv8.svg?style=flat&show=unique)
+
 # Qtemu - Home Work RCTN Hacktiv8
 
 ## Tech Stack
